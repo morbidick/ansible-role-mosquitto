@@ -38,25 +38,6 @@ mosquitto:
   # Whether to install mosquitto_pub and _sub cmds
 mosquitto_install_clients: false
 mosquitto_version: 1.4.*
-mosquitto_aws: yes
-mosquitto_aws_region: eu-west-1
-# List of files that need to be copied and secured from S3
-# These should be things like TLS files
-mosquitto_aws_files:
-- bucket: config-bucket
- path: /mosquitto/tls/ca.crt
- dest: /etc/mosquitto/certs/ca.crt
- mode: "0600"
-- bucket: config-bucket
- path: /mosquitto/tls/server.crt
- dest: /etc/mosquitto/certs/server.crt
- mode: "0600"
-- bucket: config-bucket
- path: /mosquitto/tls/server.key
- dest: /etc/mosquitto/certs/server.key
- mode: "0600"
-# All key/value pairs will be added to
-# `/etc/mosquitto/conf.d/mosquitto.local.conf`
 mosquitto_settings:
   allow_anonymous: "true"
   persistence: "true"

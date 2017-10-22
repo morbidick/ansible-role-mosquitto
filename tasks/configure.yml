@@ -1,26 +1,4 @@
 ---
-
-- name: Download files from S3
-  become: yes
-  s3:
-    bucket: "{{ item.bucket }}"
-    dest: "{{ item.dest }}"
-    mode: get
-    object: "{{ item.path }}"
-    region: "{{ mosquitto_aws_region }}"
-  with_items: "{{ mosquitto_aws_files }}"
-  when: mosquitto_aws
-    and mosquitto_aws_files | length > 0
-
-- name: Secure downloaded S3 files
-  become: yes
-  file:
-    mode: "{{ item.mode }}"
-    path: "{{ item.dest }}"
-  with_items: "{{ mosquitto_aws_files }}"
-  when: mosquitto_aws
-    and mosquitto_aws_files | length > 0
-
 - name: Setup password file
   become: yes
   template:

@@ -2,9 +2,6 @@
 
 mosquitto_install_clients: no
 mosquitto_version: 1.4.*
-mosquitto_aws: no
-mosquitto_aws_region: eu-west-1
-mosquitto_aws_files: [ ]
 mosquitto_limits:
   nofile_soft: 65535
   nofile_hard: 65535

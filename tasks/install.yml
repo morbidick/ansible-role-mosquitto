@@ -21,18 +21,6 @@
     state: present
   when: mosquitto_install_clients
 
-- name: Install Pip for boto
-  become: yes
-  apt:
-    name: python-pip
-  when: mosquitto_aws
-
-- name: Install boto
-  become: yes
-  pip:
-    name: boto
-  when: mosquitto_aws
-
 - name: Add ulimits to Upstart config
   become: yes
   lineinfile:
