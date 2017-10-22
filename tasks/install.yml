@@ -6,7 +6,6 @@
     repo: ppa:mosquitto-dev/mosquitto-ppa
     state: present
     update_cache: yes
-    validate_certs: no
 
 - name: Ensure Mosquitto service is installed
   become: yes
@@ -17,7 +16,7 @@
 - name: Ensure Mosquitto clients
   become: yes
   apt:
-    name: "mosquitto_clients={{ mosquitto_version }}"
+    name: "mosquitto-clients={{ mosquitto_version }}"
     state: present
   when: mosquitto_install_clients
 
