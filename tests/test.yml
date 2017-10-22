@@ -5,8 +5,7 @@
 
   roles:
     - role: sansible.mosquitto
-      mosquitto:
-        install_clients: yes
+      mosquitto_install_clients: yes
 
   post_tasks:
     - name: Mosquitto should be running
