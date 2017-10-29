@@ -8,4 +8,5 @@ mosquitto_limits:
 mosquitto_settings:
   allow_anonymous: "true"
   persistence: "true"
+  port: 1883
 mosquitto_users: {}
